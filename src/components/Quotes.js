@@ -106,5 +106,11 @@ color: #333333;
     height: auto;
     border-style:none;
 }
+@media (max-width: 620px) {
+    .cards{
+    width:100%;
+}
+ 
 
+}
 `

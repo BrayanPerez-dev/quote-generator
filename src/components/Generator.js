@@ -154,11 +154,16 @@ color:#828282;
  }
 
  @media (max-width: 475px) {
+    .principal{
+    width:100%;
+}
   .carta {
-    padding: 0px;
+    padding: none;
   }
+
 }
 @media (max-width: 320px) {
+    
   .details {
     width: 400px
   }
