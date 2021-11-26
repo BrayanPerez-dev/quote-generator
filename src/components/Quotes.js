@@ -33,19 +33,14 @@ const Quotes = () => {
             <div className="author"> 
             <p>{author}</p>
             </div>
-     
                 {
                     quotes.map(({quoteText,_id},index) => (
-                     <>
-
-                    <div className="quotes" >
+                    <div className="quotes" key={_id}>
                     <Divider className="vertical" type="vertical"  />
                     <Card key={index} className="cards" >
                      {quoteText}
                     </Card>
                     </div>
-                     </>
-
                     ))
                 }
                 <br/>
@@ -79,11 +74,13 @@ color: #333333;
 
 .boton{
     display: flex;
+    align-items:center;
     flex-flow: row wrap;
     justify-content: flex-end;
-    align-items:baseline;
     margin: 100px;
-    margin-top:1em;
+    margin-top:2em;
+    cursor: pointer;
+    transition: all 200ms  ;
 
 }
 

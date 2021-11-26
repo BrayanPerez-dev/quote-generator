@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
-import { ArrowRightOutlined , SyncOutlined } from '@ant-design/icons'
-import { Divider,Card} from 'antd';
+import { ArrowRightOutlined, SyncOutlined } from '@ant-design/icons'
+import { Divider, Card } from 'antd';
 import 'antd/dist/antd.css'
 const Generator = () => {
 
@@ -33,34 +33,34 @@ const Generator = () => {
 
     return (
         <Wrapper>
-            <div  className="boton" onClick={getData}>
-            <h5 >random</h5>&nbsp;<SyncOutlined/>
+            <div className="boton" onClick={getData}>
+                <h5 >random</h5>&nbsp;<SyncOutlined />
             </div>
             <div className="divi-prin">
-            <Divider className="vertical" type="vertical" />
-                 
+                <Divider className="vertical" type="vertical" />
+
                 <Card className="principal">
-                <p className="font">
-                    { quote.text}
-                </p>
+                    <p className="font">
+                        {quote.text}
+                    </p>
                 </Card>
-             </div>
-             
-             <div className="details">
-             <Link to={`/Quotes/${quote.author}`}>
-                <Card className="carta">
-                  <div className="f1">
-                 {quote.author}
-                  </div>
-                  <div className="f2">
-                  {quote.genre}
-                  </div>
-                  <ArrowRightOutlined className="Arrow"/>
-                </Card>
+            </div>
+
+            <div className="details">
+                <Link to={`/Quotes/${quote.author}`}>
+                    <Card className="carta">
+                        <div className="f1">
+                            {quote.author}
+                        </div>
+                        <div className="f2">
+                            {quote.genre}
+                        </div>
+                        <ArrowRightOutlined className="Arrow" />
+                    </Card>
                 </Link>
             </div>
-            
-    
+
+
         </Wrapper>
     )
 }
@@ -87,7 +87,8 @@ const Wrapper = styled.div`
 
 .principal{
     width:40%;
-    height:50%;
+    word-wrap: break-Word
+
 }
 .vertical{
     width: 8px;
@@ -148,7 +149,7 @@ color:#828282;
 }
  .font{
     font-style: normal;
-    font-size: 26px;
+    font-size: 23px;
     line-height: 120%;
     color: #000000;
  }
@@ -167,6 +168,7 @@ color:#828282;
   .details {
     width: 400px
   }
+ 
 }
 `
 
