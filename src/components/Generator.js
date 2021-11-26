@@ -70,13 +70,13 @@ const Wrapper = styled.div`
 
 .boton{
     display: flex;
+    align-items:center;
     flex-flow: row wrap;
     justify-content: flex-end;
-    align-items:baseline;
     margin: 100px;
     margin-top:2em;
     cursor: pointer;
-   transition: all 200ms  ;
+    transition: all 200ms  ;
 
 }
 .divi-prin{
@@ -152,6 +152,17 @@ color:#828282;
     line-height: 120%;
     color: #000000;
  }
+
+ @media (max-width: 475px) {
+  .carta {
+    padding: 0px;
+  }
+}
+@media (max-width: 320px) {
+  .details {
+    width: 400px
+  }
+}
 `
 
 

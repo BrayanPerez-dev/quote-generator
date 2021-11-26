@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
-import { ArrowRightOutlined , SyncOutlined } from '@ant-design/icons'
+import { SyncOutlined } from '@ant-design/icons'
 import { Divider,Card} from 'antd';
 import 'antd/dist/antd.css'
 import styled from 'styled-components'
@@ -11,17 +11,18 @@ const Quotes = () => {
     const author = useParams().name
 
     const [quotes,setQuotes] = useState([])
-    const  getData  = () => {
-       fetch(`https://quote-garden.herokuapp.com/api/v3/quotes?author=${author}&limit=10`)
-       .then(res => res.json())
-       .then(response =>{
-       const data = response.data
-       setQuotes(data)
-
-    })
-    }
+    
 
     useEffect(() => {
+        const  getData  = () => {
+            fetch(`https://quote-garden.herokuapp.com/api/v3/quotes?author=${author}&limit=10`)
+            .then(res => res.json())
+            .then(response =>{
+            const data = response.data
+            setQuotes(data)
+     
+         })
+         }
         getData()
     }, [author])
     return (

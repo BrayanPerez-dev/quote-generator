@@ -3,8 +3,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    NavLink
   } from "react-router-dom";
 import Generator from './Generator';
 import Quotes from './Quotes';
