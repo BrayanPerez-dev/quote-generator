@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
 import { ArrowRightOutlined, SyncOutlined } from '@ant-design/icons'
-import { Divider, Card } from 'antd';
+import { Divider, Card, Button } from 'antd';
 import 'antd/dist/antd.css'
 const Generator = () => {
 
@@ -33,9 +33,8 @@ const Generator = () => {
 
     return (
         <Wrapper>
-            <div className="boton" onClick={getData}>
-                <h5 >random</h5>&nbsp;<SyncOutlined />
-            </div>
+           
+            <Button className="btn" onClick={getData}> <h5 >random</h5>&nbsp;<SyncOutlined className="anticon" /></Button>
             <div className="divi-prin">
                 <Divider className="vertical" type="vertical" />
 
@@ -68,16 +67,21 @@ const Generator = () => {
 const Wrapper = styled.div`
 
 
-.boton{
+.btn{
     display: flex;
     align-items:center;
     flex-flow: row wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin: 100px;
     margin-top:2em;
+    border-style: none;
     cursor: pointer;
-    transition: all 200ms  ;
+    position: relative;
+    left: 80%;
+}
 
+.anticon{
+    color: initial;
 }
 .divi-prin{
     display: flex;

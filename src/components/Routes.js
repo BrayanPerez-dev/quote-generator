@@ -4,6 +4,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
+import Error from './Error';
 import Generator from './Generator';
 import Quotes from './Quotes';
 const Routes = () => {
@@ -17,7 +18,7 @@ const Routes = () => {
                         <Quotes />
                     </Route>
                     <Route path="*">
-                        <Generator />
+                        <Error/>
                     </Route>
                 </Switch>
             </Router>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { SyncOutlined } from '@ant-design/icons'
-import { Divider,Card} from 'antd';
+import { Divider, Card, Button } from 'antd';
 import 'antd/dist/antd.css'
 import styled from 'styled-components'
 
@@ -10,41 +10,40 @@ const Quotes = () => {
 
     const author = useParams().name
 
-    const [quotes,setQuotes] = useState([])
-    
+    const [quotes, setQuotes] = useState([])
+
 
     useEffect(() => {
-        const  getData  = () => {
+        const getData = () => {
             fetch(`https://quote-garden.herokuapp.com/api/v3/quotes?author=${author}&limit=10`)
-            .then(res => res.json())
-            .then(response =>{
-            const data = response.data
-            setQuotes(data)
-     
-         })
-         }
+                .then(res => res.json())
+                .then(response => {
+                    const data = response.data
+                    setQuotes(data)
+
+                })
+        }
         getData()
     }, [author])
     return (
         <Wrapper>
-             <div  className="boton" >
-            <h5 >random</h5>&nbsp;<SyncOutlined/>
+            <Button className="btn" > <h5 >random</h5>&nbsp;<SyncOutlined className="anticon" /></Button>
+
+            <div className="author">
+                <p>{author}</p>
             </div>
-            <div className="author"> 
-            <p>{author}</p>
-            </div>
-                {
-                    quotes.map(({quoteText,_id},index) => (
+            {
+                quotes.map(({ quoteText, _id }, index) => (
                     <div className="quotes" key={_id}>
-                    <Divider className="vertical" type="vertical"  />
-                    <Card key={index} className="cards" >
-                     {quoteText}
-                    </Card>
+                        <Divider className="vertical" type="vertical" />
+                        <Card key={index} className="cards" >
+                            {quoteText}
+                        </Card>
                     </div>
-                    ))
-                }
-                <br/>
-          
+                ))
+            }
+            <br />
+
         </Wrapper>
     )
 }
@@ -72,18 +71,23 @@ color: #333333;
 }
    
 
-.boton{
+
+.btn{
     display: flex;
     align-items:center;
     flex-flow: row wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin: 100px;
     margin-top:2em;
+    border-style: none;
     cursor: pointer;
-    transition: all 200ms  ;
-
+    position: relative;
+    left: 80%;
 }
 
+.anticon{
+    color: initial;
+}
 .quotes{
     display: flex;
     justify-content: center;
